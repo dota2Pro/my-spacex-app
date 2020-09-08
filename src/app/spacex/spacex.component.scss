@@ -12,6 +12,11 @@ $primary-gray: #F2F2F2;
   background: $primary-gray;
   padding: 10px;
 
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+  }
+
   .card-wrapper {
 
     @media screen and (min-width: 700px) {
@@ -156,4 +161,14 @@ $primary-gray: #F2F2F2;
 .row {
   display: flex;
   flex-direction: row;
+}
+
+.heading{
+  background: #F2F2F2;
+
+  @media screen and (min-width: 1440px) {
+    text-align: center;
+
+  }
+
 }
