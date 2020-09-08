@@ -68,11 +68,16 @@ export class SpacexComponent implements OnInit {
     this.spaceXSvc.getSpaceXData(this.filterObj).subscribe((result: RootObject[]) => {
       this.launches = [...result];
       this.launches.forEach((launch: RootObject) => {
-        let landing = false;
+
+        launch.launch_landing = false;
+
         launch.rocket.first_stage.cores.forEach((core: Core) => {
-          landing = core.land_success;
+          if (core.land_success) {
+            launch.launch_landing = true;
+          }
         });
-        launch.launch_landing = landing;
+
+
       });
     });
   }

@@ -72,33 +72,38 @@
       </div>
 
     </div>
-    <div class="filter-outer-wrapper" *ngFor="let launch of launches">
-      <div class="filter-inner-wrapper">
 
-        <div class="image-container">
-          <img [src]="launch.links.mission_patch_small">
-        </div>
+    <div class="cards-container">
+      <div class="card-outer-wrapper" *ngFor="let launch of launches">
+        <div class="card-inner-wrapper">
 
-        <div class="info-container">
-          <div class="link">
-            <a><strong>{{launch.mission_name}} # {{launch.mission_id}}</strong></a>
+          <div class="image-container">
+            <img [src]="launch.links.mission_patch_small">
           </div>
 
-          <div>
-            <strong>Mission Ids:</strong>
-            <ul>
-              <li *ngFor="let id of launch.mission_id">{{id}}</li>
-            </ul>
+
+          <div class="info-container">
+            <div class="link">
+              <a><strong>{{launch.mission_name}} # {{launch.mission_id}}</strong></a>
+            </div>
+
+            <div>
+              <strong>Mission Ids:</strong>
+              <ul>
+                <li *ngFor="let id of launch.mission_id">{{id}}</li>
+              </ul>
+            </div>
+
+            <div><strong>Launch Year: {{launch.launch_year}}</strong></div>
+            <div><strong>Successful Launch: {{launch.launch_success}}</strong></div>
+            <div><strong>Successful Landing: {{launch.launch_landing}}</strong></div>
           </div>
 
-          <div><strong>Launch Year: {{launch.launch_year}}</strong></div>
-          <div><strong>Successful Launch: {{launch.launch_success}}</strong></div>
-          <div><strong>Successful Landing: {{launch.launch_landing}}</strong></div>
+
         </div>
-
-
       </div>
     </div>
+
   </div>
 
 
