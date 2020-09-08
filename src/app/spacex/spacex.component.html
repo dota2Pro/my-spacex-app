@@ -1,0 +1,108 @@
+<div class="main-container">
+
+  <h2 class="margin-0">SpaceX Launch Programs</h2>
+
+  <div class="card-wrapper">
+    <div class="filter-outer-wrapper">
+      <div class="filter-inner-wrapper">
+
+        <h3>Filters</h3>
+        <div class="text-center">Launch Year</div>
+        <hr>
+
+        <div class="row">
+
+          <!--        Col 1-->
+          <div class="column">
+            <div class="left-col" *ngFor="let col1Year of col1Years">
+              <button class="year-button"
+                      (click)="filterObj.year = col1Year;  fetchData();"
+                      [ngClass]="{'active-year-button ': filterObj.year === col1Year}">
+                <strong>{{col1Year}}</strong>
+              </button>
+            </div>
+
+          </div>
+
+          <!--        Col 2-->
+          <div class="column">
+            <div *ngFor="let col2Year of col2Years">
+              <button class="year-button"
+                      (click)="filterObj.year = col2Year;  fetchData();"
+                      [ngClass]="{'active-year-button ': filterObj.year === col2Year}">
+                <strong>{{col2Year}}</strong>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="text-center">Successful Launch</div>
+        <hr>
+
+        <div class="flex-center">
+          <button class="year-button"
+                  [ngClass]="{'active-year-button ': filterObj.launch}"
+                  (click)="filterObj.launch = true;  fetchData();">True
+          </button>
+
+          <button class="year-button"
+                  [ngClass]="{'active-year-button ': !filterObj.launch}"
+                  (click)="filterObj.launch = false;  fetchData();">False
+          </button>
+        </div>
+
+        <div class="text-center">Successful Landing</div>
+        <hr>
+
+        <div class="flex-center">
+          <button class="year-button"
+                  [ngClass]="{'active-year-button ': filterObj.landing}"
+                  (click)="filterObj.landing = true; fetchData();">True
+          </button>
+
+          <button class="year-button"
+                  [ngClass]="{'active-year-button ': !filterObj.landing}"
+                  (click)="filterObj.landing = false; fetchData();">False
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="filter-outer-wrapper" *ngFor="let launch of launches">
+      <div class="filter-inner-wrapper">
+
+        <div class="image-container">
+          <img [src]="launch.links.mission_patch_small">
+        </div>
+
+        <div class="info-container">
+          <div class="link">
+            <a><strong>{{launch.mission_name}} # {{launch.mission_id}}</strong></a>
+          </div>
+
+          <div>
+            <strong>Mission Ids:</strong>
+            <ul>
+              <li *ngFor="let id of launch.mission_id">{{id}}</li>
+            </ul>
+          </div>
+
+          <div><strong>Launch Year: {{launch.launch_year}}</strong></div>
+          <div><strong>Successful Launch: {{launch.launch_success}}</strong></div>
+          <div><strong>Successful Landing: {{launch.launch_landing}}</strong></div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="text-center"><strong>Developed by:</strong> Navneet</div>

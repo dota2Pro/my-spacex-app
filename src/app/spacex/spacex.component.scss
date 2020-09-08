@@ -1,0 +1,119 @@
+$primary-gray: #F2F2F2;
+
+.text-center {
+  text-align: center;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.main-container {
+  background: $primary-gray;
+  padding: 10px;
+
+  .card-wrapper {
+
+    @media screen and (min-width: 700px) {
+      display: flex;
+      flex-direction: row;
+      //margin-left: 20px;
+    }
+
+    .filter-outer-wrapper {
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      min-width: 200px;
+
+      @media screen and (min-width: 700px) {
+        //display: flex;
+        //flex-direction: row;
+        margin-left: 20px;
+      }
+
+      .filter-inner-wrapper {
+        padding: 3px;
+
+        .image-container {
+          background: $primary-gray;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+
+        .info-container {
+          line-height: 22px;
+
+          .link {
+            margin: 5px 0 5px 0;
+            color: #4D5273
+          }
+
+          ul {
+            margin: 2px;
+          }
+        }
+
+        .column {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+
+          .left-col {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+
+        .row {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .active-year-button {
+          background: #7CBA01 !important;
+        }
+
+        .year-button {
+          margin: 5px;
+          background: #C5E09B;
+          border-radius: 5px;
+          border: 0;
+          padding: 5px 10px;
+
+          &:first-of-type {
+            float: left;
+          }
+
+          &:last-of-type {
+            margin-left: 10px;
+          }
+
+        }
+
+        //
+        //.year-button-hidden {
+        //  visibility: hidden;
+        //  margin-left: 10px;
+        //}
+      }
+    }
+  }
+
+
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
